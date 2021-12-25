@@ -1,14 +1,14 @@
 import React, {useContext} from 'react';
 import styled from "styled-components";
+import Navbar from './components/Navbar';
 import { ThemeContext } from './contexts/themeContext';
 
 
 function App() {
-  const {isLight, switchTheme} = useContext(ThemeContext);
+  const {isLight} = useContext(ThemeContext);
   return (
     <Container bg = {isLight}>
-        <Test>hello</Test>
-        <button onClick={switchTheme}>switch</button>
+        <Navbar />
     </Container>
   );
 }
@@ -21,10 +21,5 @@ const Container = styled.div`
   background-color : ${props => props.bg ? "#ffffff" : "#111827"};
   width: 100vw;
   height: 100vh;
-`;
-const Test = styled.div`
-  background-color: rgba(31, 41, 55, 1);
-  height: 100px;
-  width: 200px;
-  margin: 0 auto;
+  position : absolute;
 `;
