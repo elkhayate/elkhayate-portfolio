@@ -5,33 +5,40 @@ import { ThemeContext } from '../contexts/themeContext';
 export default function Navbar(){
     const { switchTheme, isLight } = useContext(ThemeContext);
     return (
-        <Container light={isLight}>
-            <Anchor>
-                <Logo>elkhayate</Logo>
-            </Anchor>
-            <Nav>
-                <Item>About</Item>
-                <Frame light = {isLight} onClick={switchTheme}>
-                    <i class={`fas fa-${isLight ? 'sun' : 'moon'}`}/>
-                </Frame>
-            </Nav>
-        </Container>
+        <Navb>
+            <Container light={isLight}>
+                <Anchor>
+                    <Logo>elkhayate</Logo>
+                </Anchor>
+                <Nav>
+                    <Item>About</Item>
+                    <Frame light = {isLight} onClick={switchTheme}>
+                        <i class={`fas fa-${isLight ? 'sun' : 'moon'}`}/>
+                    </Frame>
+                </Nav>
+            </Container> 
+        </Navb>
     )
 }
-
+const Navb = styled.div`
+    position: absolute;
+    top: 0;
+    width: 100%;
+`;
 const Frame = styled.div`
     color : ${props => props.light ? "black" : "white"};
     transform: scale(1.3);
     margin-left: 20px;
     cursor : pointer;
+    background-color : rgba(255, 255, 255, 0.1);
+    padding : 4px;
+    border-radius : 50%;
 `;
 
 const Container = styled.div`
     color : ${props => props.light ? "black" : "#ffffff"};
-    width: 70%;
+    width: 63%;
     margin: auto;
-    position: relative;
-    top: 0;
     display: flex;
     align-items: center;
     justify-content : space-between;
