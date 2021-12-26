@@ -1,17 +1,22 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from '../contexts/themeContext';
-
+import {Link} from "react-router-dom";
 export default function Navbar(){
     const { switchTheme, isLight } = useContext(ThemeContext);
+    const Style = {textDecoration : "none"};
     return (
         <Navb>
             <Container light={isLight}>
-                <Anchor>
-                    <Logo>elkhayate</Logo>
-                </Anchor>
+                <Link style={Style} to = "/">
+                    <Anchor>
+                        <Logo>el<Part light = {isLight}>khayate</Part></Logo>
+                    </Anchor>
+                </Link>
                 <Nav>
-                    <Item>About</Item>
+                    <Link style={Style} to="/about">
+                        <Item>About</Item>
+                    </Link>
                     <Frame light = {isLight} onClick={switchTheme}>
                         <i class={`fas fa-${isLight ? 'sun' : 'moon'}`}/>
                     </Frame>
@@ -46,6 +51,9 @@ const Container = styled.div`
     height: 80px;
 `;
 
+const Part = styled.span`
+    color : ${props => props.light ? "#4c1d95" : "white"};
+`;
 const Anchor = styled.a`
     text-decoration: none;
 `;
@@ -69,6 +77,9 @@ const Item = styled.h2`
     font-size: 1.125rem;
     line-height: 1.75rem;
     font-weight: 500;
+    &:hover {
+        color : #4c1d95;
+    }
 `;
 
 

@@ -3,14 +3,23 @@ import styled from "styled-components";
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { ThemeContext } from './contexts/themeContext';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
 
 
 function App() {
   const {isLight} = useContext(ThemeContext);
   return (
     <Container bg = {isLight}>
+      <Router>
         <Navbar />
+        <Routes>
+          <Route path="/" exact component = {<Home/>} />
+          <Route path="/about" exact component={<About/>} />
+        </Routes>
         <Footer />
+      </Router>  
     </Container>
   );
 }
