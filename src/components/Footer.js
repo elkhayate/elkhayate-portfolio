@@ -6,7 +6,7 @@ export default function Footer() {
     const {isLight} = useContext(ThemeContext);
     return(
         <Container light = {isLight}>
-            <Content>
+            <Content light = {isLight}>
                 <Copyright>© 2022 ELKHAYATE Built with ♡ <Anchor href='https://github.com/elkhayate/elkhayate-portfolio'>Open Sourced on Github</Anchor></Copyright>
             <Socials>
                 <Social href='https://twitter.com/elkha_yate'>
@@ -20,6 +20,7 @@ export default function Footer() {
                 </Social>
             </Socials>
             </Content> 
+            
         </Container>
     )
 }
@@ -63,6 +64,6 @@ const Content = styled.div`
     align-items: center;
     align-content: center;
     height: 100%;
-    border-top: 1px solid white;
+    border-top: 1px solid ${props => props.light ? "black" : "white"};
 `;
 

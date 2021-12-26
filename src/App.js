@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { ThemeContext } from './contexts/themeContext';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 
@@ -14,10 +14,10 @@ function App() {
     <Container bg = {isLight}>
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" exact component = {<Home/>} />
-          <Route path="/about" exact component={<About/>} />
-        </Routes>
+        <Switch>
+          <Route path="/"  exact component = {Home} />
+          <Route path="/about" exact component={About} />
+        </Switch>
         <Footer />
       </Router>  
     </Container>

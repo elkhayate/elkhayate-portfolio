@@ -41,7 +41,7 @@ const Navb = styled.div`
     width: 100%;
 `;
 const Frame = styled.div`
-    color : ${props => props.light ? "black" : "white"};
+    color : ${props => props.light ? "#374151" : "white"};
     transform: scale(1.3);
     margin-left: 20px;
     cursor : pointer;
@@ -51,7 +51,7 @@ const Frame = styled.div`
 `;
 
 const Container = styled.div`
-    color : ${props => props.light ? "black" : "#ffffff"};
+    color : ${props => props.light ? "#374151" : "#ffffff"};
     width: 63%;
     margin: auto;
     display: flex;
