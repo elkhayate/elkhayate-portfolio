@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { ThemeContext } from '../contexts/themeContext';
 import {Link} from "react-router-dom";
 export default function Navbar(){
@@ -25,6 +25,16 @@ export default function Navbar(){
         </Navb>
     )
 }
+const Appear = keyframes`
+    0% {
+        opacity: 0;
+        margin-right: -40px;
+    }
+    100% {
+        opacity: 1;
+        margin-right: 0px;
+    }
+`;
 const Navb = styled.div`
     position: absolute;
     top: 0;
@@ -59,10 +69,12 @@ const Anchor = styled.a`
 `;
 
 const Logo = styled.h1`
+    margin-top: 0px;
     font-weight : 600;
     font-size: 1.5rem;
     line-height: 2rem;
     text-transform: uppercase;
+    margin-top: 12px;
 `;
 
 const Nav = styled.nav`
@@ -70,6 +82,7 @@ const Nav = styled.nav`
     justify-content: space-around;
     align-items: center;
     align-content: center;
+    animation: ${Appear} 1750ms  linear;
 `;
 
 const Item = styled.h2`
