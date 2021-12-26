@@ -29,8 +29,9 @@ export default App;
 
 
 const Container = styled.div`
-  background-color : ${props => props.bg ? "#ffffff" : "#111827"};
-  width: 100vw;
-  height: 100vh;
-  position : relative;
+    background-color : ${props => props.bg ? "#ffffff" : "#111827"};
+    width: 100vw;
+    height: 100vh;
+    position : relative;
+    overflow: auto;
 `;

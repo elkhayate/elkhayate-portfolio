@@ -19,7 +19,7 @@ export default function Navbar(){
                         <Item>About</Item>
                     </Link>
                     <Frame light = {isLight} onClick={switchTheme}>
-                        <i class={`fas fa-${isLight ? 'sun' : 'moon'}`}/>
+                        <i className={`fas fa-${isLight ? 'sun' : 'moon'}`}/>      
                     </Frame>
                 </Nav>
             </Container> 
@@ -60,6 +60,9 @@ const Container = styled.div`
     justify-content : space-between;
     align-content: center;
     height: 80px;
+    @media (max-width: 1200px) {
+      width: 90%;
+    }
 `;
 
 const Part = styled.span`
