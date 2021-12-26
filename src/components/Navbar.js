@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ThemeContext } from '../contexts/themeContext';
 import {Link} from "react-router-dom";
+
 export default function Navbar(){
     const { switchTheme, isLight } = useContext(ThemeContext);
     const Style = {textDecoration : "none"};
@@ -26,11 +27,11 @@ export default function Navbar(){
     )
 }
 const Appear = keyframes`
-    0% {
+    from {
         opacity: 0;
-        margin-right: -40px;
+        margin-right: -90px;
     }
-    100% {
+    to {
         opacity: 1;
         margin-right: 0px;
     }

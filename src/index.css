@@ -15,3 +15,11 @@ code {
 a { 
   color: inherit; 
 } 
+
+.hover:hover {
+  color: #4c1d95;
+}
+
+.fa-hand-point-down{
+  transform: scale(0.7);
+}

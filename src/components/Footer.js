@@ -10,17 +10,17 @@ export default function Footer() {
                 <Copyright>© 2022 ELKHAYATE Built with ♡ <Anchor href='https://github.com/elkhayate/elkhayate-portfolio'>Open Sourced on Github</Anchor></Copyright>
             <Socials>
                 <Social href='https://twitter.com/elkha_yate'>
-                    <i class="fab fa-twitter"/>
+                    <i class="fab fa-twitter hover"/>
                 </Social>
                 <Social href='https://www.linkedin.com/in/mohamed-elkhayate-4535a91b6/'>
-                    <i class="fab fa-linkedin"/>
+                    <i class="fab fa-linkedin hover"/>
                 </Social>
                 <Social href='https://github.com/elkhayate'>
-                    <i class="fab fa-github"/>
+                    <i class="fab fa-github hover"/>
                 </Social>
             </Socials>
             </Content> 
-            
+
         </Container>
     )
 }

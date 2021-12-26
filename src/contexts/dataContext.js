@@ -6,7 +6,7 @@ export const DataContext = createContext();
 
 export default function DataContextProvider(props){
     const [loading, setLoading] = useState(true);
-    const [skills, setSkills] = useState();
+    const [skills, setSkills] = useState([]);
     useEffect(() => {
         let url = "http://localhost:8080/skills";
         axios
@@ -25,6 +25,7 @@ export default function DataContextProvider(props){
         <DataContext.Provider value={{skills, loading}}>
             {props.children}
         </DataContext.Provider>
+
     )
 }
 

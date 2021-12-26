@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { DataContext } from '../contexts/dataContext';
 import { ThemeContext } from '../contexts/themeContext';
 
@@ -20,20 +20,39 @@ export default function Home(){
                     <Job>and a passionate Web Developer from Morocco based in Ukraine</Job>
                     <Job>Who loves to build and deliver quality products.</Job>
                 </About>
-            
-
-            <Skills>
-                {
-                    skills.map(function(val){
-                        return <Skill><i class={val.image_url}/></Skill>;
-                    })
-                }
-            </Skills>
+            <Tech>
+                <Techstack>Tech stack I use <i class="fas fa-hand-point-down"></i></Techstack>
+                <Skills>
+                    {
+                        skills.map(function(val){
+                            return <Skill><i class={val.image_url}/></Skill>;
+                        })
+                    } 
+                </Skills>
+            </Tech>
+            <Tech>
+                <Techstack>Open Source Projects <i class="fas fa-hand-point-down"></i></Techstack>
+            </Tech>
             </Container>
         </Homee>
     )
 }
-
+const Appear = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
+const Techstack = styled.h2`
+    line-height: 1.5rem;
+    font-weight: 200;
+    text-align: center;
+`;
+const Tech = styled.div`
+    margin-top: 40px;
+`;
 const Skills = styled.div`
     width: 40%;
     margin: auto;
@@ -41,10 +60,11 @@ const Skills = styled.div`
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    margin-top: 40px;
+    animation: ${Appear} 3750ms  linear;
 `;
 const Skill = styled.div`
     transform: scale(2);
+    margin-top: 20px;
 `;
 const Homee = styled.div`
     position: absolute;
