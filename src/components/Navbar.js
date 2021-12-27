@@ -15,6 +15,7 @@ export default function Navbar(){
                     </Anchor>
                 </Link>
                 <Nav>
+                        <Item>RESUME</Item>
                     <Link style={Style} to="/about">
                         <Item>About</Item>
                     </Link>
@@ -88,6 +89,7 @@ const Nav = styled.nav`
 `;
 
 const Item = styled.h2`
+    margin-left: 20px;
     text-align: center;
     font-size: 1.125rem;
     line-height: 1.75rem;

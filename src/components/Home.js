@@ -64,7 +64,7 @@ export default function Home(){
                         !loading && projects.map(function(val){
                             return (<Project 
                                 key = {val._id} 
-                                repo = {val.repo_url}
+                                git = {val.repo_url}
                                 gif = {val.gif_url}
                                 img = {val.image_url}
                                 title = {val.title}

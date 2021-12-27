@@ -30,7 +30,7 @@ const Social = styled.a`
 `;
 
 const Container = styled.div`
-    margin-top: 20px;
+    margin-top: 100px;
     width: 100%;
     height: 85px;
     display: flex;
