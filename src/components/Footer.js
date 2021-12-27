@@ -7,7 +7,7 @@ export default function Footer() {
     return(
         <Container light = {isLight}>
             <Content light = {isLight}>
-                <Copyright>© 2022 ELKHAYATE Built with ♡ <Anchor href='https://github.com/elkhayate/elkhayate-portfolio'>Open Sourced on Github</Anchor></Copyright>
+                <Copyright>© 2022 ELKHAYATE Built with ♡</Copyright>
             <Socials>
                 <Social href='https://twitter.com/elkha_yate'>
                     <i className="fab fa-twitter hover"/>
@@ -32,22 +32,27 @@ const Social = styled.a`
 const Container = styled.div`
     margin-top: 100px;
     width: 100%;
-    height: 85px;
+    height: 100%;
     display: flex;
     align-items:center;
     justify-content:center;
-    color : ${props => props.light ? "black" : "#ffffff"};
+    color : ${props => props.light ? "#374151" : "#ffffff"};
+    @media (max-width: 700px) {
+        margin-top: 50px;
+    }
 `;
 
 const Copyright = styled.p`
     font-size: .875rem;
     line-height: 1.25rem;
     font-family: inherit;
+    @media (max-width: 700px) {
+        width: 100%;
+        text-align: center;
+    }
 `;
 
-const Anchor = styled.a`
-    text-decoration: underline;
-`;
+
 const Socials = styled.div`
     display: flex;
     justify-content: space-around;
@@ -63,5 +68,15 @@ const Content = styled.div`
     align-content: center;
     height: 100%;
     border-top: 1px solid ${props => props.light ? "black" : "white"};
+    @media (max-width: 1400px) {
+      width: 70%;
+    }
+    @media (max-width: 1200px) {
+      width: 90%;
+    }
+    @media (max-width: 700px) {
+      width: 95%;
+      display: block;
+    }
 `;
 

@@ -59,8 +59,14 @@ const Container = styled.div`
     justify-content : space-between;
     align-content: center;
     height: 80px;
+    @media (max-width: 1400px) {
+      width: 70%;
+    }
     @media (max-width: 1200px) {
       width: 90%;
+    }
+    @media (max-width: 700px) {
+      width: 95%;
     }
 `;
 

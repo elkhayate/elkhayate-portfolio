@@ -15,7 +15,9 @@ export default function Home(){
         axios
             .get(url)
             .then(function(response){
-                setSkills(response.data);
+                if(response.data){
+                    setSkills(response.data);
+                }
             })
             .catch(function(err){
                 console.log(err);
@@ -29,7 +31,6 @@ export default function Home(){
                 if(response.data){
                     setProjects(response.data);
                     setLoading(false);
-                    console.log(response.data)
                 }
             })
             .catch(function(err){
@@ -92,6 +93,9 @@ const Techstack = styled.h2`
 `;
 const Tech = styled.div`
     margin-top: 90px;
+    @media (max-width: 1200px) {
+        margin-top: 50px;
+    }
 `;
 const Skills = styled.div`
     width: 40%;
@@ -100,14 +104,19 @@ const Skills = styled.div`
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    animation: ${Appear} 3750ms  linear;
+    animation: ${Appear} 3750ms linear;
+    @media (max-width: 1200px) {
+        width: 60%;
+    }
+    @media (max-width: 900px) {
+        width: 80%;
+    }
 `;
 const Skill = styled.div`
     transform: scale(2);
     margin-top: 20px;
 `;
 const Homee = styled.div`
-    
     top : 80px;
 `;
 const Container = styled.div`
@@ -118,7 +127,12 @@ const About = styled.main`
     text-align: center;
     margin: auto;
     width: 50%;
-
+    @media (max-width: 1200px) {
+      width: 70%;
+    }
+    @media (max-width: 900px) {
+      width: 90%;
+    }
 `;
 const Greet = styled.h2`
     font-size: 1.875rem;
@@ -142,6 +156,9 @@ const Job = styled.p`
     font-weight: 600;
     margin: 0;
     padding: 0;
+    @media (max-width: 700px) {
+        font-size: 1.05rem;
+    }
 `;
 const Span = styled.span`
     font-weight: 400;
