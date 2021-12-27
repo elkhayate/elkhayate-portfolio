@@ -37,8 +37,6 @@ const Appear = keyframes`
     }
 `;
 const Navb = styled.div`
-    position: absolute;
-    top: 0;
     width: 100%;
 `;
 const Frame = styled.div`

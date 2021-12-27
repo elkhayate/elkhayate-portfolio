@@ -20,7 +20,6 @@ export default function Footer() {
                 </Social>
             </Socials>
             </Content> 
-
         </Container>
     )
 }
@@ -31,9 +30,8 @@ const Social = styled.a`
 `;
 
 const Container = styled.div`
+    margin-top: 20px;
     width: 100%;
-    position: absolute;
-    bottom: 0;
     height: 85px;
     display: flex;
     align-items:center;

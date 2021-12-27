@@ -107,7 +107,7 @@ const Skill = styled.div`
     margin-top: 20px;
 `;
 const Homee = styled.div`
-    position: absolute;
+    
     top : 80px;
 `;
 const Container = styled.div`
