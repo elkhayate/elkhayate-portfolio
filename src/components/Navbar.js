@@ -2,20 +2,30 @@ import React, {useContext} from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ThemeContext } from '../contexts/themeContext';
 import {Link} from "react-router-dom";
-
+import pdf from "../elkhayate's_resume.pdf";
 export default function Navbar(){
     const { switchTheme, isLight } = useContext(ThemeContext);
     const Style = {textDecoration : "none"};
     return (
         <Navb>
             <Container light={isLight}>
-                <Link style={Style} to = "/">
+                <Link 
+                    style={Style} 
+                    to = "/"
+                >
                     <Anchor>
                         <Logo>el<Part light = {isLight}>khayate</Part></Logo>
                     </Anchor>
                 </Link>
                 <Nav>
+                    <Link 
+                        style={Style} 
+                        to={pdf} 
+                        target="_blank" 
+                        download
+                    >
                         <Item>RESUME</Item>
+                    </Link>
                     <Link style={Style} to="/about">
                         <Item>About</Item>
                     </Link>

@@ -29,6 +29,12 @@ const Container = styled.div`
     color : ${props => props.light ? "#374151" : "#ffffff"};
     width: 40%;
     margin: auto;
+    @media (max-width: 1200px) {
+        width: 50%;
+    }
+    @media (max-width: 900px) {
+        width: 90%;
+    }
 `;
 
 const Title = styled.h1`
@@ -41,4 +47,9 @@ const Para = styled.p`
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
+    @media (max-width: 900px) {
+        padding: 0;
+        margin: 3px;
+        font-size: 15px;
+    }
 `;
