@@ -3,6 +3,9 @@ import styled, { keyframes } from 'styled-components';
 import { ThemeContext } from '../contexts/themeContext';
 import {Link} from "react-router-dom";
 import pdf from "../elkhayate's_resume.pdf";
+import sun from "../assets/sun.png";
+import moon from "../assets/moon.png";
+
 export default function Navbar(){
     const { switchTheme, isLight } = useContext(ThemeContext);
     const Style = {textDecoration : "none"};
@@ -29,9 +32,7 @@ export default function Navbar(){
                     <Link style={Style} to="/about">
                         <Item>About</Item>
                     </Link>
-                    <Frame light = {isLight} onClick={switchTheme}>
-                        <i className={`fas fa-${isLight ? 'sun' : 'moon'}`}/>      
-                    </Frame>
+                        <Img onClick={switchTheme} src = {isLight ? sun : moon} alt = "switch theme"/>    
                 </Nav>
             </Container> 
         </Navb>
@@ -50,13 +51,18 @@ const Appear = keyframes`
 const Navb = styled.div`
     width: 100%;
 `;
+const Img = styled.img`
+    transform: scale();
+    margin-left: 20px;
+    cursor : pointer;
+`;
 const Frame = styled.div`
     color : ${props => props.light ? "#374151" : "white"};
-    transform: scale(1.3);
+    transform: scale(1);
     margin-left: 20px;
     cursor : pointer;
     background-color : rgba(255, 255, 255, 0.1);
-    padding : 4px;
+    padding : 02px;
     border-radius : 50%;
 `;
 

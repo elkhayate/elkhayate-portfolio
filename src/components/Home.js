@@ -4,27 +4,20 @@ import { ThemeContext } from '../contexts/themeContext';
 import Project from './Project';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
+import git from "../assets/git.png";
+import bootstrap from "../assets/bootstrap.png";
+import heroku from "../assets/heroku.png";
+import javascript from "../assets/javascript.png";
+import mongo from "../assets/mongo.png";
+import node from "../assets/node.png";
+import python from "../assets/python.png";
 
 export default function Home(){
     const {isLight} = useContext(ThemeContext);
     const [loading, setLoading] = useState(true);
-    const [skills, setSkills] = useState([]);
     const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
-        let url = "https://full-portfolio.herokuapp.com/api/skills";
-        axios
-            .get(url)
-            .then(function(response){
-                if(response.data){
-                    setSkills(response.data);
-                    setLoading(false);
-                }
-            })
-            .catch(function(err){
-                console.log(err);
-            })
-    }, [])
+    const skills = [git, bootstrap, heroku, javascript, mongo, node, python];
     useEffect(() => {
         let url = "https://full-portfolio.herokuapp.com/api/projects";
         axios
@@ -55,8 +48,15 @@ export default function Home(){
                 <Techstack>Tech stack I use <i className="fas fa-hand-point-down"></i></Techstack>
                 <Skills>
                     {
-                        loading ? <ReactLoading type='bars' color='#4c1d95' height={267} width={375} className='loading' /> : skills.map(function(val){
-                            return <Skill key={val._id}><i className={val.image_url}/></Skill>;
+                        loading ? <ReactLoading 
+                            type='bars' 
+                            color='#4c1d95' 
+                            height={267} 
+                            width={375} 
+                            className='loading' 
+                        /> : 
+                        skills.map(function(val){
+                            return <Skill key={val}><img src={val} alt = "skill"/></Skill>;
                         }) 
                     } 
                 </Skills>
@@ -64,7 +64,14 @@ export default function Home(){
             <Tech>
                 <Techstack>Open Source Projects <i className="fas fa-hand-point-down"></i></Techstack>
                 {
-                        loading ? <ReactLoading type='balls' color='#4c1d95' height={267} width={375} className='loading' /> : projects.map(function(val){
+                        loading ? <ReactLoading 
+                            type='spin' 
+                            color='#4c1d95' 
+                            height={320} 
+                            width={375} 
+                            className='loading' 
+                        /> : 
+                        projects.map(function(val){
                             return (<Project 
                                 key = {val._id} 
                                 git = {val.repo_url}
@@ -115,7 +122,7 @@ const Skills = styled.div`
     }
 `;
 const Skill = styled.div`
-    transform: scale(2);
+    transform: scale(1);
     margin-top: 20px;
 `;
 const Homee = styled.div`
