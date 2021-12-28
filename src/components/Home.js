@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { ThemeContext } from '../contexts/themeContext';
 import Project from './Project';
 import axios from 'axios';
+import ReactLoading from 'react-loading';
 
 export default function Home(){
     const {isLight} = useContext(ThemeContext);
@@ -11,12 +12,13 @@ export default function Home(){
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        let url = "http://localhost:8080/skills";
+        let url = "https://full-portfolio.herokuapp.com/api/skills";
         axios
             .get(url)
             .then(function(response){
                 if(response.data){
                     setSkills(response.data);
+                    setLoading(false);
                 }
             })
             .catch(function(err){
@@ -24,7 +26,7 @@ export default function Home(){
             })
     }, [])
     useEffect(() => {
-        let url = "http://localhost:8080/projects";
+        let url = "https://full-portfolio.herokuapp.com/api/projects";
         axios
             .get(url)
             .then(function(response){
@@ -53,16 +55,16 @@ export default function Home(){
                 <Techstack>Tech stack I use <i className="fas fa-hand-point-down"></i></Techstack>
                 <Skills>
                     {
-                        skills.map(function(val){
+                        loading ? <ReactLoading type='bars' color='#4c1d95' height={267} width={375} className='loading' /> : skills.map(function(val){
                             return <Skill key={val._id}><i className={val.image_url}/></Skill>;
-                        })
+                        }) 
                     } 
                 </Skills>
             </Tech>
             <Tech>
                 <Techstack>Open Source Projects <i className="fas fa-hand-point-down"></i></Techstack>
                 {
-                        !loading && projects.map(function(val){
+                        loading ? <ReactLoading type='balls' color='#4c1d95' height={267} width={375} className='loading' /> : projects.map(function(val){
                             return (<Project 
                                 key = {val._id} 
                                 git = {val.repo_url}
@@ -71,7 +73,7 @@ export default function Home(){
                                 title = {val.title}
                                 description = {val.description}
                             />)
-                        })
+                        }) 
                 }
             </Tech>
             </Container>

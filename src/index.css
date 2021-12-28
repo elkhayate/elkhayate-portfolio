@@ -23,3 +23,7 @@ a {
 .fa-hand-point-down{
   transform: scale(0.7);
 }
+
+.loading {
+  margin: auto;
+}
