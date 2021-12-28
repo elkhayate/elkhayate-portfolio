@@ -11,7 +11,7 @@ export default function About() {
             <Title>Hi there!</Title>
             <Para>👋🏻 I’m Elkhayate, a Software engineer.</Para>
             <Para>🎓 Graduated from <a href='https://nure.ua/en/'>KHNURE</a>. (June 2022 😊)</Para>
-            <Para>🏠 From Morocco 🇲🇦, but currently based in Ukraine. 🇺🇦  </Para>
+            <Para>🏠 From Morocco 🇲🇦, currently based in Ukraine. 🇺🇦  </Para>
             <Para>♟️ I'm into chess (chess.com merdashi1) and Snooker 🎱</Para>
             <Title>What I do well</Title>
             <Para>👨🏻‍💻 Environment: Git, GitHub, npm.</Para>
