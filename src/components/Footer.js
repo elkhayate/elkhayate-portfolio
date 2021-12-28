@@ -1,6 +1,9 @@
 import React,{useContext} from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from '../contexts/themeContext';
+import github from "../assets/github.png";
+import linkedin from "../assets/linkedin.png";
+import twitter from "../assets/twitter.png";
 
 export default function Footer() {
     const {isLight} = useContext(ThemeContext);
@@ -10,13 +13,13 @@ export default function Footer() {
                 <Copyright>© 2022 ELKHAYATE Built with ♡</Copyright>
             <Socials>
                 <Social href='https://twitter.com/elkha_yate'>
-                    <i className="fab fa-twitter hover"/>
+                    <Img src={twitter}/>
                 </Social>
                 <Social href='https://www.linkedin.com/in/mohamed-elkhayate-4535a91b6/'>
-                    <i className="fab fa-linkedin hover"/>
+                    <Img src={linkedin}/>
                 </Social>
                 <Social href='https://github.com/elkhayate'>
-                    <i className="fab fa-github hover"/>
+                    <Img src={github}/>
                 </Social>
             </Socials>
             </Content> 
@@ -24,11 +27,16 @@ export default function Footer() {
     )
 }
 const Social = styled.a`
-    margin: 10px;
-    transform: scale(1.8);
+    margin: 0px;
+    transform: scale(.8);
     cursor: pointer;
+    opacity: .7;
+    transition: opacity .3s linear;
+    &:hover{
+        opacity: 1;
+    }
 `;
-
+const Img = styled.img``;
 const Container = styled.div`
     margin-top: 100px;
     width: 100%;
