@@ -48,13 +48,6 @@ export default function Home(){
                 <Techstack>Tech stack I use <i className="fas fa-hand-point-down"></i></Techstack>
                 <Skills>
                     {
-                        loading ? <ReactLoading 
-                            type='bars' 
-                            color='#4c1d95' 
-                            height={267} 
-                            width={375} 
-                            className='loading' 
-                        /> : 
                         skills.map(function(val){
                             return <Skill key={val}><img src={val} alt = "skill"/></Skill>;
                         }) 
@@ -65,11 +58,11 @@ export default function Home(){
                 <Techstack>Open Source Projects <i className="fas fa-hand-point-down"></i></Techstack>
                 {
                         loading ? <ReactLoading 
-                            type='spin' 
+                            type='bars' 
                             color='#4c1d95' 
-                            height={320} 
+                            height={267} 
                             width={375} 
-                            className='loading' 
+                            className='loading'
                         /> : 
                         projects.map(function(val){
                             return (<Project 

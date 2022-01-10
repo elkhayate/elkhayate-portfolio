@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ThemeContext } from '../contexts/themeContext';
 import {Link} from "react-router-dom";
-import pdf from "../elkhayate's_resume.pdf";
+import pdf from "../resume.pdf";
 import sun from "../assets/sun.png";
 import moon from "../assets/moon.png";
 
@@ -56,16 +56,6 @@ const Img = styled.img`
     margin-left: 20px;
     cursor : pointer;
 `;
-const Frame = styled.div`
-    color : ${props => props.light ? "#374151" : "white"};
-    transform: scale(1);
-    margin-left: 20px;
-    cursor : pointer;
-    background-color : rgba(255, 255, 255, 0.1);
-    padding : 02px;
-    border-radius : 50%;
-`;
-
 const Container = styled.div`
     color : ${props => props.light ? "#374151" : "#ffffff"};
     width: 63%;
