@@ -11,13 +11,14 @@ import javascript from "../assets/javascript.png";
 import mongo from "../assets/mongo.png";
 import node from "../assets/node.png";
 import python from "../assets/python.png";
+import redux from "../assets/redux.png";
 
 export default function Home(){
     const {isLight} = useContext(ThemeContext);
     const [loading, setLoading] = useState(true);
     const [projects, setProjects] = useState([]);
 
-    const skills = [git, bootstrap, heroku, javascript, mongo, node, python];
+    const skills = [git, bootstrap, redux, heroku, javascript, mongo, node, python];
     useEffect(() => {
         let url = "https://full-portfolio.herokuapp.com/api/projects";
         axios
