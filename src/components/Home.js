@@ -5,7 +5,6 @@ import Project from './Project';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
 import git from "../assets/git.png";
-import bootstrap from "../assets/bootstrap.png";
 import heroku from "../assets/heroku.png";
 import javascript from "../assets/javascript.png";
 import mongo from "../assets/mongo.png";
@@ -18,7 +17,7 @@ export default function Home(){
     const [loading, setLoading] = useState(true);
     const [projects, setProjects] = useState([]);
 
-    const skills = [git, bootstrap, redux, heroku, javascript, mongo, node, python];
+    const skills = [git, redux, heroku, javascript, mongo, node, python];
     useEffect(() => {
         let url = "https://full-portfolio.herokuapp.com/api/projects";
         axios
